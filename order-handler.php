@@ -250,7 +250,7 @@
 		$printer->set_text_emphasized();
 		$printer->add_text_line("Customer Provided Notes:");
 		$printer->cancel_text_emphasized();
-		$printer->add_text_line(empty($order->post->post_excerpt) ? "None" : $order->post->post_excerpt);
+		$printer->add_text_line(empty($order_meta['order_custom_notes'][0]) ? "None" : $order_meta['order_custom_notes'][0]);
 		if (get_option('star-cloudprnt-print-logo-bottom-input')) $printer->add_nv_logo(esc_attr(get_option('star-cloudprnt-print-logo-bottom-input')));
 		
 		$printer->printjob();
